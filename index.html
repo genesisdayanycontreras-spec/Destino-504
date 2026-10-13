@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turismo en Honduras - Viaja y Explora</title>
+  <link rel="shortcut icon" href="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=64&q=80">
+
+  <!-- Bootstrap CSS Link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome Cdn -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --honduras-blue: #0073CF;
+      --honduras-dark-blue: #004b8d;
+      --honduras-gold: #f39c12;
+    }
+
+    .top-bar { 
+      background-color: var(--honduras-dark-blue); 
+      color: white; 
+      padding: 8px 0; 
+      font-size: 14px; 
+    }
+    .top-bar a { color: white; text-decoration: none; }
+
+    .navbar-brand {
+      color: var(--honduras-blue) !important;
+      font-weight: 700;
+    }
+
+    .home {
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      min-height: 85vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    #btn-new { 
+      background-color: var(--honduras-blue); 
+      color: white; 
+      border: none; 
+      transition: background 0.3s;
+    }
+    #btn-new:hover { 
+      background-color: var(--honduras-dark-blue); 
+      color: white; 
+    }
+
+    .card img { 
+      transition: transform 0.3s ease; 
+      cursor: pointer; 
+    }
+    .card img:hover { 
+      transform: scale(1.03); 
+    }
+
+    /* Efecto interactivo para los cuadros de Servicios */
+    .service-card {
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 115, 207, 0.2) !important;
+    }
+
+    .section-title span {
+      color: var(--honduras-blue);
+      border-bottom: 3px solid var(--honduras-gold);
+      padding-bottom: 2px;
+    }
+
+    footer { 
+      background-color: #0b1c2d; 
+      color: white; 
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      color: white;
+      font-size: 20px;
+      margin: 0 8px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    .social-btn:hover {
+      transform: scale(1.15);
+      color: white;
+    }
+    .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .btn-facebook { background-color: #1877f2; }
+    .btn-whatsapp { background-color: #25d366; }
+    .btn-youtube { background-color: #ff0000; }
+    .btn-tiktok { background-color: #000000; }
+
+    .socket { background-color: #050e16; color: white; }
+  </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container">
+    <div class="col-12 text-center">
+      <p class="mb-0"><a href="tel:+50493463401"><i class="fas fa-phone-alt me-2"></i>Llámanos: +504 9346-3401 | ¡Conoce las bellezas de 5 Estrellas de Honduras! 🇭🇳</a></p>
+    </div>
+  </div>
+</div>
+<!-- End Top Bar -->
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-lg-5 fs-4" href="#">
+      <i class="fas fa-umbrella-beach me-2"></i>Destino 504
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fa-solid fa-bars"></i></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-1"><a class="nav-link active fw-semibold" href="#">Inicio</a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="#about">Acerca de</a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="#services">Servicios</a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="#gallary">Destinos</a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="#hotels">Hoteles</a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="#packages">Paquetes</a></li>
+        <li class="nav-item mx-1"><a class="nav-link" href="#book">Reservas</a></li>
+      </ul>
+      <form class="d-flex me-3" role="search" onsubmit="event.preventDefault();">
+        <input class="form-control me-2" type="search" placeholder="¿Qué lugar buscas?" aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit" style="border-color: var(--honduras-blue); color: var(--honduras-blue);">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- Navbar End -->
+
+<!-- Home Section Start -->
+<section class="home">
+  <div class="container">
+    <h5 class="text-warning fw-bold text-uppercase tracking">Descubre el Corazón de América</h5>
+    <h1 class="display-3 fw-bold my-3">Turismo en <span style="color: #5bc0de;">Honduras</span></h1>
+    <p class="lead col-lg-8 mx-auto">Desde la imponente cultura Maya en Copán hasta las paradisíacas playas cristalinas de Roatán y Utila. Vive una experiencia inolvidable.</p>
+    <a href="#packages" class="btn btn-lg px-4 mt-3 shadow" id="btn-new">Ver Paquetes Turísticos</a>
+  </div>
+</section>
+<!-- Home Section End -->
+
+<!-- About Start -->
+<section class="about py-5" id="about">
+  <div class="container mt-4 pb-3">
+    <h1 class="text-center section-title mb-5"><span>A</span>cerca de Nuestros Destinos</h1>
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6 py-3">
+        <div class="card border-0 shadow-lg rounded overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" class="img-fluid" alt="Honduras Turismo">
+        </div>
+      </div>
+      <div class="col-12 col-md-6 py-3">
+        <h2 class="fw-bold mb-3" style="color: var(--honduras-dark-blue);">Tradición, Naturaleza y Hospitalidad</h2>
+        <p class="text-muted leading-relaxed">Honduras ofrece una gran diversidad de experiencias turísticas separadas por regiones únicas: el occidente con su legado maya y café de altura, el norte con cataratas y reservas tropicales, y el Caribe insular con los arrecifes de coral más hermosos del continente americano.</p>
+        <p class="text-muted">Cada sitio cuenta con su propia identidad y atractivos independientes diseñados para ofrecerte aventura, descanso y cultura.</p>
+        <a class="btn btn-primary mt-2" id="btn-new" href="#gallary">Explorar Lugares</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- About End -->
+
+<!-- Section Services Start (Interactivo con Modales e Imágenes) -->
+<section class="services bg-light py-5" id="services">
+  <div class="container mt-3 pb-3">
+    <h1 class="text-center section-title mb-5"><span>S</span>ervicios Exclusivos</h1>
+    <p class="text-center text-muted mb-4">haz clic en cualquier tarjeta para ver imágenes y la lista completa con detalles.</p>
+    <div class="row g-4">
+
+      <!-- Cuadro 1: Hoteles y Resorts -->
+      <div class="col-6 col-md-4">
+        <div class="card h-100 text-center p-4 border-0 shadow-sm bg-white service-card" data-bs-toggle="modal" data-bs-target="#modalServicioHoteles">
+           <i class="fas fa-hotel fa-3x mb-3" style="color: var(--honduras-blue);"></i>
+           <div class="card-body p-0">
+            <h3 class="h5 fw-bold">Hoteles y Resorts</h3>
+            <p class="text-muted small">Hospedajes con encanto colonial y complejos hoteleros todo incluido frente al mar.</p>
+            <span class="badge bg-primary">Ver Lista de Hoteles</span>
+           </div>
+        </div>
+      </div>
+
+      <!-- Cuadro 2: Gastronomía Catracha -->
+      <div class="col-6 col-md-4">
+        <div class="card h-100 text-center p-4 border-0 shadow-sm bg-white service-card" data-bs-toggle="modal" data-bs-target="#modalServicioGastronomia">
+           <i class="fas fa-utensils fa-3x mb-3" style="color: var(--honduras-blue);"></i>
+           <div class="card-body p-0">
+            <h3 class="h5 fw-bold">Gastronomía Catracha</h3>
+            <p class="text-muted small">Disfruta anafres, baleadas tradicionales, mariscos frescos y café de especialidad.</p>
+            <span class="badge bg-primary">Ver Platos Típicos</span>
+           </div>
+        </div>
+      </div>
+
+      <!-- Cuadro 4: Tours por Separado -->
+      <div class="col-6 col-md-4">
+        <div class="card h-100 text-center p-4 border-0 shadow-sm bg-white service-card" data-bs-toggle="modal" data-bs-target="#modalServicioTours">
+           <i class="fas fa-map-marked-alt fa-3x mb-3" style="color: var(--honduras-blue);"></i>
+           <div class="card-body p-0">
+            <h3 class="h5 fw-bold">Tours por Separado</h3>
+            <p class="text-muted small">Excursiones independientes por cada destino turístico según tus preferencias.</p>
+            <span class="badge bg-primary">Ver Opciones de Tours</span>
+           </div>
+        </div>
+      </div>
+
+      <!-- Cuadro 5: Traslados Seguros -->
+      <div class="col-6 col-md-4">
+        <div class="card h-100 text-center p-4 border-0 shadow-sm bg-white service-card" data-bs-toggle="modal" data-bs-target="#modalServicioTraslados">
+           <i class="fas fa-plane-departure fa-3x mb-3" style="color: var(--honduras-blue);"></i>
+           <div class="card-body p-0">
+            <h3 class="h5 fw-bold">Traslados Seguros</h3>
+            <p class="text-muted small">Conexiones terrestres privadas y transporte aéreo nacional confiable.</p>
+            <span class="badge bg-primary">Ver Servicios de Transporte</span>
+           </div>
+        </div>
+      </div>
+
+      <!-- Cuadro 6: Ecoturismo y Aventura -->
+      <div class="col-6 col-md-4">
+        <div class="card h-100 text-center p-4 border-0 shadow-sm bg-white service-card" data-bs-toggle="modal" data-bs-target="#modalServicioEcoturismo">
+           <i class="fas fa-hiking fa-3x mb-3" style="color: var(--honduras-blue);"></i>
+           <div class="card-body p-0">
+            <h3 class="h5 fw-bold">Ecoturismo y Aventura</h3>
+            <p class="text-muted small">Senderismo en biosferas, canopy, buceo en arrecifes y cataratas tropicales.</p>
+            <span class="badge bg-primary">Ver Actividades</span>
+           </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Section Services End -->
+
+<!-- Section Gallary Start -->
+<section class="gallary py-5" id="gallary">
+  <div class="container mt-3 pb-3">
+    <h1 class="text-center section-title mb-5"><span>D</span>estinos Turísticos </h1>
+    <div class="row g-4">
+      
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhWqBLp95k287dCYJiLaVNudxU-Ed1iD2XR0VMIHcbTg&s=10" class="card-img-top" alt="Copán Ruinas" height="230" style="object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalCopan">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <h5 class="card-title fw-bold">1. Copán Ruinas</h5>
+            <p class="text-muted small mb-3">La joya arqueológica de la civilización maya en occidente.</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCopan">Ver Información</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi3LHE00zlUz7ygDawteLS0Nl9c8J1QLd5sIc2HAQ6Q&s=10" class="card-img-top" alt="Roatan" height="230" style="object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalRoatan">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <h5 class="card-title fw-bold">2. Roatán</h5>
+            <p class="text-muted small mb-3">Playas de arena blanca y arrecife de coral en el Caribe.</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalRoatan">Ver Información</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReNukofptsz8IkAYYMmHpfYjjB8N_7OM6bie__oTYCJg&s=10" class="card-img-top" alt="Lago de Yojoa" height="230" style="object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalYojoa">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <h5 class="card-title fw-bold">3. Lago de Yojoa</h5>
+            <p class="text-muted small mb-3">El único lago de origen volcánico rodeado de montañas.</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalYojoa">Ver Información</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0cwuhtjZw-8KCYEdpRcxGdxXTda_91PfWSlGs-zQYhA&s=10" class="card-img-top" alt="Pulhapanzak" height="230" style="object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalPulhapanzak">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <h5 class="card-title fw-bold">4. Cataratas Pulhapanzak</h5>
+            <p class="text-muted small mb-3">Impresionante salto de agua de 43 metros de altura.</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalPulhapanzak">Ver Información</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgRqkTq05jf8AmRq9gnqRKQfqpNU0ze_MOvv9xslzIYg&s=10" class="card-img-top" alt="Cayos Cochinos" height="230" style="object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalCayos">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <h5 class="card-title fw-bold">5. Cayos Cochinos</h5>
+            <p class="text-muted small mb-3">Área marina protegida de aguas vírgenes y arrecifes.</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCayos">Ver Información</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt40baP7otVygy2XpcvwvQBuH8R1i-8TLDokpRjSaZFA&s=10" class="card-img-top" alt="Utila" height="230" style="object-fit: cover;" data-bs-toggle="modal" data-bs-target="#modalUtila">
+          <div class="card-body text-center d-flex flex-column justify-content-between">
+            <h5 class="card-title fw-bold">6. Isla de Utila</h5>
+            <p class="text-muted small mb-3">Santuario mundial de buceo y avistamiento de tiburón ballena.</p>
+            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalUtila">Ver Información</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Section Gallary End -->
+
+<!-- Section Hotels Start -->
+<section class="hotels bg-light py-5" id="hotels">
+  <div class="container mt-3 pb-3">
+    <h1 class="text-center section-title mb-5"><span>H</span>oteles Más Visitados Cercanos</h1>
+    <div class="row g-4">
+
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsbsksa6Te-SVjOuPhfna4vtMRTlxZaxUUfiwz5UxT2w&s=10" class="card-img-top" alt="Infinity Bay Resort" height="220" style="object-fit: cover;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-primary mb-2">Cerca de Roatán</span>
+              <h5 class="card-title fw-bold">Infinity Bay Spa & Beach Resort</h5>
+              <p class="text-muted small">Resort de lujo frente a la playa de West Bay con piscina de borde infinito y spa.</p>
+            </div>
+            <a href="#book" class="btn btn-sm btn-outline-primary mt-2">Reservar Hotel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYmVfTOQiAypEoI0MXC_9kxdQMAs1rnLuAZugYDXbilQ&s=10" class="card-img-top" alt="Mayan Princess Resort" height="220" style="object-fit: cover;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-primary mb-2">Cerca de Roatán</span>
+              <h5 class="card-title fw-bold">Mayan Princess Beach Resort</h5>
+              <p class="text-muted small">Alojamiento todo incluido muy concurrido con centros de buceo profesionales.</p>
+            </div>
+            <a href="#book" class="btn btn-sm btn-outline-primary mt-2">Reservar Hotel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5lbBAjagJXMgdKstMuKVF_Ag_XlgyIg3cJq25-KB3qw&s=10" class="card-img-top" alt="Clarion Copan" height="220" style="object-fit: cover;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-secondary mb-2">Cerca de Copán</span>
+              <h5 class="card-title fw-bold">Clarion Hotel Copán Ruinas</h5>
+              <p class="text-muted small">Ubicado a minutos del parque arqueológico. Ofrece hermosas vistas a las montañas.</p>
+            </div>
+            <a href="#book" class="btn btn-sm btn-outline-primary mt-2">Reservar Hotel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSak1S_du5bnwZRF4ZKk4bkdWtjBQ2wVCzCYgr65MhEJw&s=10" class="card-img-top" alt="Hacienda San Lucas" height="220" style="object-fit: cover;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-secondary mb-2">Cerca de Copán</span>
+              <h5 class="card-title fw-bold">Hacienda San Lucas</h5>
+              <p class="text-muted small">Eco-lodge colonial centenario en las colinas con vista al valle de Copán.</p>
+            </div>
+            <a href="#book" class="btn btn-sm btn-outline-primary mt-2">Reservar Hotel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-WBPgXgQ5c4cfsOzirEJ3yfCK-JoiTqLLaSr9sldenw&s=10" class="card-img-top" alt="Honduyate Hotel" height="220" style="object-fit: cover;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-success mb-2">Cerca de Yojoa y Pulhapanzak</span>
+              <h5 class="card-title fw-bold">Honduyate Marina & Hotel</h5>
+              <p class="text-muted small">A orillas del lago, ideal para deportes acuáticos y disfrutar la gastronomía local.</p>
+            </div>
+            <a href="#book" class="btn btn-sm btn-outline-primary mt-2">Reservar Hotel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card border-0 shadow h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ZH0FY4UVNKQd_XUwrrptazjxAuCppNCSp0yCrmI_Aw&s=10" class="card-img-top" alt="Utila Lodge" height="220" style="object-fit: cover;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-info text-dark mb-2">Cerca de Utila</span>
+              <h5 class="card-title fw-bold">Utila Lodge & Resort</h5>
+              <p class="text-muted small">Famoso hotel sobre palafitos en el mar para amantes del buceo y la vida marina.</p>
+            </div>
+            <a href="#book" class="btn btn-sm btn-outline-primary mt-2">Reservar Hotel</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Section Hotels End -->
+
+<!-- Section Packages Start -->
+<section class="packages py-5" id="packages">
+  <div class="container mt-3 pb-3">
+    <h1 class="text-center section-title mb-5"><span>P</span>aquetes Turísticos Especiales</h1>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFfr9fPTm-orWSD4K1tQpcL1jq0uIDtpPrds9ufP-COQ&s=10" class="card-img-top" alt="Copan">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 fw-bold">Paquete Copán Maya</h3>
+            <p class="card-text text-muted small">Incluye entrada al parque arqueológico, guía bilingüe certificado, hospedaje colonial y tour de café de altura.</p>
+            <h4 class="card-title h6 mb-3 fw-bold" style="color: var(--honduras-blue) !important;">Precio: $150 / persona</h4>
+            <a href="#book" class="btn mt-auto" id="btn-new">Reservar Copán</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzQwBRgwBrT36XRksQwbvKO51w9Ble_5-SeYr6TPHrBg&s=10" class="card-img-top" alt="Roatan">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 fw-bold">Paquete Roatán Playas</h3>
+            <p class="card-text text-muted small">Disfrute de hotel frente al mar, equipo completo de snorkel, transporte aeropuerto-hotel y cóctel de bienvenida.</p>
+            <h4 class="card-title h6 mb-3 fw-bold" style="color: var(--honduras-blue) !important;">Precio: $350 / persona</h4>
+            <a href="#book" class="btn mt-auto" id="btn-new">Reservar Roatán</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm4HAOdP8H0zQOuc_CrAKTS2qXF3xBzQucwp2MIaguqQ&s=10" class="card-img-top" alt="Yojoa">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 fw-bold">Paquete Cataratas Pulhapanzak</h3>
+            <p class="card-text text-muted small">Visita guiada a Pulhapanzak, almuerzo con el tradicional pescado frito.</p>
+            <h4 class="card-title h6 mb-3 fw-bold" style="color: var(--honduras-blue) !important;">Precio: $120 / persona</h4>
+            <a href="#book" class="btn mt-auto" id="btn-new">Reservar Yojoa</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Section Packages End -->
+
+<!-- Section Book Start -->
+<section class="book bg-light py-5" id="book">
+  <div class="container mt-3 pb-3">
+    <h1 class="text-center section-title mb-5"><span>R</span>eserva Tu Viaje</h1>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-10 col-lg-5 py-3">
+        <div class="card border-0 shadow">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsZ0ea4WcOM-9NodufDOcg8hNb6urJ_o18arX8cqNCjQ&s=10" class="img-fluid rounded" alt="Travel Booking">
+        </div>
+      </div>
+      <div class="col-10 col-md-8 col-lg-5 py-3">
+        <form id="form-reserva" action="#" class="p-4 bg-white rounded shadow-sm border">
+          <div class="mb-3">
+            <label class="form-label text-muted small">Selecciona el Destino:</label>
+            <select id="res-destino" class="form-select" required>
+              <option value="" selected disabled>Elige un lugar...</option>
+              <option>Copán Ruinas</option>
+              <option>Roatán</option>
+              <option>Lago de Yojoa</option>
+              <option>Cataratas de Pulhapanzak</option>
+              <option>Cayos Cochinos</option>
+              <option>Isla de Utila</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <input id="res-nombre" type="text" class="form-control" placeholder="Nombre completo" required>
+          </div>
+          <div class="mb-3">
+            <input id="res-telefono" type="tel" class="form-control" placeholder="Tu teléfono" required>
+          </div>
+          <div class="mb-3">
+            <input id="res-personas" type="number" min="1" class="form-control" placeholder="¿Cuántas personas viajan?" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-muted small mb-0">Fecha de llegada:</label>
+            <input id="res-llegada" type="date" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-muted small mb-0">Fecha de salida:</label>
+            <input id="res-salida" type="date" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <textarea id="res-comentarios" class="form-control" rows="3" placeholder="Comentarios adicionales (opcional)"></textarea>
+          </div>
+          <button type="submit" class="btn w-100 py-2 fw-semibold shadow-sm" id="btn-new">
+            <i class="fa-brands fa-whatsapp me-2"></i>Confirmar Reserva por WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section Book End -->
+
+<!-- Start Footer -->
+<footer>
+  <div class="container py-5">
+    <div class="row text-center justify-content-center">
+      <div class="col-sm-10 col-md-8 col-lg-6">
+        <h3 class="fw-bold mb-3" style="color: var(--honduras-gold);"><i class="fas fa-flag"></i> Honduras Es Pasión</h3>
+        <p class="text-secondary small mb-4">Promoviendo la riqueza histórica, arqueológica y natural de las regiones turísticas de Honduras.</p>
+        
+        <!-- Redes sociales: perfiles de Dayany Contreras -->
+        <div class="social pt-2 d-flex justify-content-center flex-wrap gap-2">
+          <a href="https://instagram.com/dayany__contreras" target="_blank" rel="noopener" class="social-btn btn-instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/19AD6pXx6E/" target="_blank" rel="noopener" class="social-btn btn-facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <!-- WhatsApp: +504 9346-3401 -->
+          <a href="https://wa.me/50493463401" target="_blank" rel="noopener" class="social-btn btn-whatsapp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://youtube.com/@dayanycontreras" target="_blank" rel="noopener" class="social-btn btn-youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@dayyy.contreras" target="_blank" rel="noopener" class="social-btn btn-tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer -->
+
+<!-- Start Socket -->
+<div class="socket text-center py-3">
+  <p class="my-0 small">
+    Destino 504 te espera, para brindarte la mejor experiencia
+  </p>
+</div>
+<!-- End Socket -->
+
+<!-- ========================================== -->
+<!-- MODALES INTERACTIVOS DE LOS 6 SERVICIOS -->
+<!-- ========================================== -->
+
+<!-- Modal 1: Hoteles y Resorts -->
+<div class="modal fade" id="modalServicioHoteles" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: var(--honduras-blue);">
+        <h5 class="modal-title"><i class="fas fa-hotel me-2"></i>Lista de Hoteles y Resorts Recomendados</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Infinity Bay">
+              <div class="card-body">
+                <h6 class="fw-bold">Infinity Bay Spa & Beach Resort</h6>
+                <p class="small text-muted mb-1"><strong>Ubicación:</strong> West Bay, Roatán</p>
+                <p class="small text-muted">Resort frente a la playa con piscina infinita y bungalows de lujo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Hacienda San Lucas">
+              <div class="card-body">
+                <h6 class="fw-bold">Hacienda San Lucas</h6>
+                <p class="small text-muted mb-1"><strong>Ubicación:</strong> Copán Ruinas</p>
+                <p class="small text-muted">Eco-hotel estilo colonial centenario con vista al hermoso valle.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Honduyate">
+              <div class="card-body">
+                <h6 class="fw-bold">Honduyate Marina & Hotel</h6>
+                <p class="small text-muted mb-1"><strong>Ubicación:</strong> Lago de Yojoa</p>
+                <p class="small text-muted">Cabañas a orillas del lago con marina para deportes acuáticos.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Utila Lodge">
+              <div class="card-body">
+                <h6 class="fw-bold">Utila Lodge & Resort</h6>
+                <p class="small text-muted mb-1"><strong>Ubicación:</strong> Isla de Utila</p>
+                <p class="small text-muted">Especializado en buceo con vistas directas sobre las aguas del Caribe.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2: Gastronomía Catracha -->
+<div class="modal fade" id="modalServicioGastronomia" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: var(--honduras-blue);">
+        <h5 class="modal-title"><i class="fas fa-utensils me-2"></i>Gastronomía Catracha Tradicional</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Baleada Catracha">
+              <div class="card-body">
+                <h6 class="fw-bold">La Baleada Tradicional</h6>
+                <p class="small text-muted mb-1"><strong>Ingredientes:</strong> Tortilla de harina, frijoles refritos, mantequilla y queso rallado.</p>
+                <p class="small text-muted">El plato emblemático de Honduras, disponible en todo el país.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Pescado Frito">
+              <div class="card-body">
+                <h6 class="fw-bold">Pescado Frito con Tajadas</h6>
+                <p class="small text-muted mb-1"><strong>Especialidad en:</strong> Lago de Yojoa y Zonas Costeras</p>
+                <p class="small text-muted">Pescado fresco acompañado de tajadas de plátano verde, encurtido y chismol.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Café de Especialidad">
+              <div class="card-body">
+                <h6 class="fw-bold">Café de Especialidad</h6>
+                <p class="small text-muted mb-1"><strong>Región:</strong> Marcala y Copán</p>
+                <p class="small text-muted">Café gourmet de altura reconocido mundialmente por sus notas frutales y aroma único.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Anafres de Frijoles">
+              <div class="card-body">
+                <h6 class="fw-bold">Anafres de Frijoles y Queso</h6>
+                <p class="small text-muted mb-1"><strong>Entrada Tradicional:</strong> Todo el país</p>
+                <p class="small text-muted">Frijoles molidos con queso fundido servidos en anafre de barro caliente con chips de tortilla.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4: Tours por Separado -->
+<div class="modal fade" id="modalServicioTours" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: var(--honduras-blue);">
+        <h5 class="modal-title"><i class="fas fa-map-marked-alt me-2"></i>Opciones de Tours Independientes</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Tour Copan">
+              <div class="card-body">
+                <h6 class="fw-bold">Tour Arqueológico Copán Maya</h6>
+                <p class="small text-muted">Recorrido por las ruinas, túneles mayas y visita al santuario de aves Macaw Mountain.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Tour Snorkel">
+              <div class="card-body">
+                <h6 class="fw-bold">Tour Snorkel & Arrecife en Roatán</h6>
+                <p class="small text-muted">Navegación en catamarán con paradas de snorkel en el segundo arrecife más grande del mundo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5: Traslados Seguros -->
+<div class="modal fade" id="modalServicioTraslados" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: var(--honduras-blue);">
+        <h5 class="modal-title"><i class="fas fa-plane-departure me-2"></i>Servicios de Transporte y Traslado</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Transporte Privado">
+              <div class="card-body">
+                <h6 class="fw-bold">Shuttles Privados y Vans Turísticas</h6>
+                <p class="small text-muted">Unidades climatizadas con chofer privado hacia Copán, Tegucigalpa, San Pedro Sula y La Ceiba.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Vuelos Locales">
+              <div class="card-body">
+                <h6 class="fw-bold">Vuelos Domésticos e Insulares</h6>
+                <p class="small text-muted">Conexiones aéreas rápidas entre aeropuertos nacionales y las Islas de la Bahía (Roatán/Utila).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 6: Ecoturismo y Aventura -->
+<div class="modal fade" id="modalServicioEcoturismo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: var(--honduras-blue);">
+        <h5 class="modal-title"><i class="fas fa-hiking me-2"></i>Actividades de Ecoturismo y Aventura</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Canopy Pulhapanzak">
+              <div class="card-body">
+                <h6 class="fw-bold">Canopy Extremo en Pulhapanzak</h6>
+                <p class="small text-muted">Líneas de tirolesa que pasan directamente frente a la impresionante caída de la catarata.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Senderismo Cerro Azul">
+              <div class="card-body">
+                <h6 class="fw-bold">Senderismo en Cerro Azul Meámbar</h6>
+                <p class="small text-muted">Rutas de montaña dentro del parque nacional rodeado de miradores y biodiversidad única.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODALES INDEPENDIENTES DE DESTINOS -->
+<div class="modal fade" id="modalCopan" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: var(--honduras-blue) !important;">
+        <h5 class="modal-title">Copán Ruinas</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Ubicación:</strong> Departamento de Copán, Occidente de Honduras.</p>
+        <p>Declarado Patrimonio de la Humanidad por la UNESCO. Este sitio arqueológico es famoso por su extraordinaria Escalinata de los Jeroglíficos, templos esculpidos en piedra fina y estelas detalladas que explican la historia de la dinastía maya.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalRoatan" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: var(--honduras-blue) !important;">
+        <h5 class="modal-title">Roatán, Islas de la Bahía</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Ubicación:</strong> Mar Caribe, Honduras.</p>
+        <p>Es la isla más grande del archipiélago. Destaca por sus playas de arena blanca como West Bay, su agua cristalina color turquesa y por formar parte del Sistema Arrecifal Mesoamericano.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalYojoa" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: var(--honduras-blue) !important;">
+        <h5 class="modal-title">Lago de Yojoa</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Ubicación:</strong> Entre Comayagua, Cortés y Santa Bárbara.</p>
+        <p>Es el único lago de origen volcánico en Honduras. Un paraíso para la observación de aves, rodeado de montañas cafetaleras y famoso por su gastronomía a base de pescado frito fresco.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalPulhapanzak" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: var(--honduras-blue) !important;">
+        <h5 class="modal-title">Cataratas de Pulhapanzak</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Ubicación:</strong> San Buenaventura, Cortés.</p>
+        <p>Es una impresionante caída de agua de 43 metros de altura formada por el río Lindo. Ofrece recorridos guiados detrás de la cortina de agua, zonas para acampar y piscinas naturales.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalCayos" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: var(--honduras-blue) !important;">
+        <h5 class="modal-title">Cayos Cochinos</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Ubicación:</strong> Costa norte de Honduras.</p>
+        <p>Grupo de 13 pequeños cayos e islas de coral protegidos como reserva marina. Sus aguas vírgenes albergan una gran diversidad de vida marina.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalUtila" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-white" style="background-color: var(--honduras-blue) !important;">
+        <h5 class="modal-title">Isla de Utila</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Ubicación:</strong> Islas de la Bahía, Caribe hondureño.</p>
+        <p>Conocida mundialmente como uno de los lugares más accesibles para obtener certificaciones de buceo y observar el majestuoso tiburón ballena.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts de Bootstrap y Font Awesome -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ===== SCRIPT: CONSERVAR LAS IMÁGENES QUE YA CAMBIASTE (sin botón de edición) ===== -->
+<script>
+(function () {
+  var STORAGE_KEY = 'honduras_imagenes_v1';
+  var OVERLAY = 'linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55))';
+  var hero = document.querySelector('.home');
+  var imgs = Array.prototype.slice.call(document.querySelectorAll('img'));
+  var saved = {};
+
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch (e) { saved = {}; }
+
+  imgs.forEach(function (img, i) { img.dataset.imgKey = 'img-' + i; });
+  if (hero) hero.dataset.imgKey = 'hero';
+
+  Object.keys(saved).forEach(function (key) {
+    var el = document.querySelector('[data-img-key="' + key + '"]');
+    if (!el || !saved[key]) return;
+    if (el === hero) {
+      hero.style.backgroundImage = OVERLAY + ', url("' + saved[key].replace(/"/g, '%22') + '")';
+    } else {
+      el.src = saved[key];
+    }
+  });
+})();
+</script>
+
+<!-- ===== SCRIPT: CONFIRMAR RESERVA POR WHATSAPP ===== -->
+<script>
+(function () {
+  var WHATSAPP = '50493463401';
+  var form = document.getElementById('form-reserva');
+  var llegada = document.getElementById('res-llegada');
+  var salida = document.getElementById('res-salida');
+
+  // No permitir fechas pasadas
+  var hoy = new Date();
+  hoy.setMinutes(hoy.getMinutes() - hoy.getTimezoneOffset());
+  var hoyStr = hoy.toISOString().split('T')[0];
+  llegada.min = hoyStr;
+  salida.min = hoyStr;
+  llegada.addEventListener('change', function () {
+    salida.min = llegada.value || hoyStr;
+    if (salida.value && salida.value < llegada.value) salida.value = '';
+  });
+
+  function fecha(v) {
+    var p = v.split('-');
+    return p[2] + '/' + p[1] + '/' + p[0];
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (salida.value < llegada.value) {
+      alert('La fecha de salida no puede ser anterior a la de llegada.');
+      return;
+    }
+    var comentarios = document.getElementById('res-comentarios').value.trim();
+    var lineas = [
+      '¡Hola! Quiero confirmar una reserva 🇭🇳',
+      '',
+      '📍 Destino: ' + document.getElementById('res-destino').value,
+      '👤 Nombre: ' + document.getElementById('res-nombre').value.trim(),
+      '📞 Teléfono: ' + document.getElementById('res-telefono').value.trim(),
+      '👥 Personas: ' + document.getElementById('res-personas').value,
+      '📅 Llegada: ' + fecha(llegada.value),
+      '📅 Salida: ' + fecha(salida.value)
+    ];
+    if (comentarios) lineas.push('💬 Comentarios: ' + comentarios);
+
+    var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(lineas.join('\n'));
+    window.open(url, '_blank');
+  });
+
+  // Los botones "Reservar ..." eligen el destino automáticamente
+  var mapa = {
+    'Reservar Copán': 'Copán Ruinas',
+    'Reservar Roatán': 'Roatán',
+    'Reservar Yojoa': 'Lago de Yojoa'
+  };
+  document.querySelectorAll('#packages a[href="#book"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var d = mapa[a.textContent.trim()];
+      if (d) document.getElementById('res-destino').value = d;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
